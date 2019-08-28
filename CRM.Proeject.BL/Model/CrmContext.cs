@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CRM.Proeject.BL.Model
 {
-    public class CrmContext : DbContext
+    class CrmContext : DbContext
     {
         public CrmContext() : base("CrmConnection") { }
 
