@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CRM.Proeject.WFI
 {
-    public partial class Form1 : Form
+    public partial class CustomerForm : Form
     {
-        public Form1()
+        public CustomerForm()
         {
             InitializeComponent();
         }
