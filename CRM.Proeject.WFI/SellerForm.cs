@@ -11,26 +11,25 @@ using System.Windows.Forms;
 
 namespace CRM.Proeject.WFI
 {
-    public partial class CustomerForm : Form
+    public partial class SellerForm : Form
     {
-        public Customer Customer { get; set; }
+        public Seller Seller { get; set; }
 
-        public CustomerForm()
+        public SellerForm()
         {
             InitializeComponent();
         }
 
-
-        private void CustomerForm_Load(object sender, EventArgs e)
+        private void SellerForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void ButtonSaveCustomerForm_Click(object sender, EventArgs e)
+        private void ButtonSaveSellerForm_Click(object sender, EventArgs e)
         {
-            Customer = new Customer()
+            Seller = new Seller()
             {
-                Name = textBoxCustomerForm.Text
+                Name = textBoxSellerNameSellerForm.Text
             };
         }
     }
