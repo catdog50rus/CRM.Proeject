@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CRM.Proeject.BL.Model
 {
     public class Check
     {
-        public int CheckID { get; set; }
+        public int CheckId { get; set; }
 
-        public int CustomerID { get; set; }
+        public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
 
-        public int SellerID { get; set; }
+        public int SellerId { get; set; }
         public virtual Seller Seller { get; set; }
 
         public DateTime Created { get; set; }
@@ -22,7 +19,7 @@ namespace CRM.Proeject.BL.Model
 
         public override string ToString()
         {
-            return $"{CheckID} от {Created.ToString("dd.MM.yy hh:mm:ss")}";
+            return $"{CheckId} от {Created.ToString("dd.MM.yy hh:mm:ss")}";
         }
 
     }

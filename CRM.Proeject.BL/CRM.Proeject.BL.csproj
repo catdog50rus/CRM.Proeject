@@ -48,14 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201908271441504_201908271427168_AutomaticMigration.cs" />
-    <Compile Include="Migrations\201908271441504_201908271427168_AutomaticMigration.Designer.cs">
-      <DependentUpon>201908271441504_201908271427168_AutomaticMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cart.cs" />
+    <Compile Include="Model\CashDesk.cs" />
     <Compile Include="Model\Check.cs" />
-    <Compile Include="Model\CrmContext.cs" />
+    <Compile Include="Model\CrmContext.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Sell.cs" />
@@ -63,13 +61,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908271441504_201908271427168_AutomaticMigration.resx">
-      <DependentUpon>201908271441504_201908271427168_AutomaticMigration.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
