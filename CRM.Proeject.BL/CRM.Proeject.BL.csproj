@@ -53,6 +53,7 @@
       <DependentUpon>201908271441504_201908271427168_AutomaticMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Cart.cs" />
     <Compile Include="Model\Check.cs" />
     <Compile Include="Model\CrmContext.cs" />
     <Compile Include="Model\Customer.cs" />
