@@ -106,6 +106,11 @@
             // numericProductCount
             // 
             this.numericProductCount.Location = new System.Drawing.Point(182, 66);
+            this.numericProductCount.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.numericProductCount.Name = "numericProductCount";
             this.numericProductCount.Size = new System.Drawing.Size(160, 20);
             this.numericProductCount.TabIndex = 6;

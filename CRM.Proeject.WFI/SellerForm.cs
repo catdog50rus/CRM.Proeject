@@ -20,17 +20,30 @@ namespace CRM.Proeject.WFI
             InitializeComponent();
         }
 
+        public SellerForm(Seller seller) : this()
+        {
+            Seller = seller;
+            textBoxSellerName.Text = Seller.Name;
+        }
+
         private void SellerForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void ButtonSaveSellerForm_Click(object sender, EventArgs e)
+        private void ButtonSave_Click(object sender, EventArgs e)
         {
-            Seller = new Seller()
+            if (Seller != null)
             {
-                Name = textBoxSellerNameSellerForm.Text
-            };
+                Seller.Name = textBoxSellerName.Text;
+            }
+            else
+            {
+                Seller = new Seller()
+                {
+                    Name = textBoxSellerName.Text
+                };
+            }
         }
     }
 }

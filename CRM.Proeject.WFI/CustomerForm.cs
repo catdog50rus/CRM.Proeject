@@ -20,6 +20,12 @@ namespace CRM.Proeject.WFI
             InitializeComponent();
         }
 
+        public CustomerForm(Customer customer) : this()
+        {
+            Customer = customer;
+            textBoxCustomerForm.Text = Customer.Name;
+        }
+
 
         private void CustomerForm_Load(object sender, EventArgs e)
         {
@@ -28,10 +34,17 @@ namespace CRM.Proeject.WFI
 
         private void ButtonSaveCustomerForm_Click(object sender, EventArgs e)
         {
-            Customer = new Customer()
+            if (Customer != null)
             {
-                Name = textBoxCustomerForm.Text
-            };
+                Customer.Name = textBoxCustomerForm.Text;
+            }
+            else
+            {
+                Customer = new Customer()
+                {
+                    Name = textBoxCustomerForm.Text
+                };
+            }
         }
     }
 }

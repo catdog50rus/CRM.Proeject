@@ -22,25 +22,25 @@ namespace CRM.Proeject.WFI
 
         private void ProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogProduct = new Catalog<Product>(db.Products);
+            var catalogProduct = new Catalog<Product>(db.Products, db);
             catalogProduct.Show();
         }
 
         private void SellerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogSeller = new Catalog<Seller>(db.Sellers);
+            var catalogSeller = new Catalog<Seller>(db.Sellers, db);
             catalogSeller.Show();
         }
 
         private void CustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogCustomer = new Catalog<Customer>(db.Customers);
+            var catalogCustomer = new Catalog<Customer>(db.Customers, db);
             catalogCustomer.Show();
         }
 
         private void CheckToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogCheck = new Catalog<Check>(db.Checks);
+            var catalogCheck = new Catalog<Check>(db.Checks, db);
             catalogCheck.Show();
         }
 
@@ -64,7 +64,7 @@ namespace CRM.Proeject.WFI
             }
         }
 
-        private void ProductAddToolStripMenuItem_Click(object sender, EventArgs e)
+        public void ProductAddToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new ProductForm();
             if (form.ShowDialog() == DialogResult.OK)
@@ -72,6 +72,11 @@ namespace CRM.Proeject.WFI
                 db.Products.Add(form.Product);
                 db.SaveChanges();
             }
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
