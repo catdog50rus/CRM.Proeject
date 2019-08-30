@@ -52,14 +52,21 @@
     <Compile Include="Migrations\201908271441504_201908271427168_AutomaticMigration.Designer.cs">
       <DependentUpon>201908271441504_201908271427168_AutomaticMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908301123156_addCheck.cs" />
+    <Compile Include="Migrations\201908301123156_addCheck.Designer.cs">
+      <DependentUpon>201908301123156_addCheck.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cart.cs" />
+    <Compile Include="Model\CashDask.cs" />
     <Compile Include="Model\Check.cs" />
     <Compile Include="Model\CrmContext.cs" />
     <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\Generator.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Sell.cs" />
     <Compile Include="Model\Seller.cs" />
+    <Compile Include="Model\ShopComputerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +76,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201908271441504_201908271427168_AutomaticMigration.resx">
       <DependentUpon>201908271441504_201908271427168_AutomaticMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908301123156_addCheck.resx">
+      <DependentUpon>201908301123156_addCheck.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
