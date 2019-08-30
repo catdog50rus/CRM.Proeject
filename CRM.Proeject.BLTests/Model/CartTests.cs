@@ -18,16 +18,16 @@ namespace CRM.Proeject.BL.Model.Tests
             var customer = new Customer()
             {
                 CustomerId = 1,
-                Name = "testuser"
+                Name = "testUser"
             };
-            var prod1 = new Product()
+            var product1 = new Product()
             {
                 ProductId = 1,
-                Name = "prod1",
+                Name = "pr1",
                 Price = 100,
                 Count = 20
             };
-            var prod2 = new Product()
+            var product2 = new Product()
             {
                 ProductId = 2,
                 Name = "prod2",
@@ -38,22 +38,21 @@ namespace CRM.Proeject.BL.Model.Tests
             
             var expectedResult = new List<Product>()
             {
-                prod1, prod1, prod2
+                product1, product1, product2
             };
 
 
             // act
-            cart.Add(prod1);
-            cart.Add(prod1);
-            cart.Add(prod2);
+            cart.Add(product1);
+            cart.Add(product1);
+            cart.Add(product2);
 
             var cartResult = cart.GetAll();
 
             // assert
 
             Assert.AreEqual(expectedResult.Count, cartResult.Count);
-
-            for (int i = 0; i < expectedResult.Count; i++)
+            for(int i = 0; i < expectedResult.Count; i++)
             {
                 Assert.AreEqual(expectedResult[i], cartResult[i]);
             }

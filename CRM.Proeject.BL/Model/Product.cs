@@ -24,7 +24,7 @@ namespace CRM.Proeject.BL.Model
         {
             if (obj is Product product)
             {
-                return ProductId.Equals(product.ProductId);
+                return ProductId.Equals(obj);
             }
             return false;
         }
