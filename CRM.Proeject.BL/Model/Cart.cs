@@ -10,7 +10,7 @@ namespace CRM.Proeject.BL.Model
     public class Cart : IEnumerable
     {
         public Customer Customer { get; set; }
-        Dictionary<Product, int> Products { get; set; }
+        public Dictionary<Product, int> Products { get; set; }
         public Cart(Customer customer)
         {
             Customer = customer;
