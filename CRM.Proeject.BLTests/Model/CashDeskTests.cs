@@ -48,18 +48,24 @@ namespace CRM.Proeject.BL.Model.Tests
                 Count = 20
             };
 
-            var cart1 = new Cart(customer1);
-            cart1.Add(product1);
-            cart1.Add(product1);
-            cart1.Add(product2);
+            var cart1 = new Cart(customer1)
+            {
+                product1,
+                product1,
+                product2
+            };
 
-            var cart2 = new Cart(customer2);
-            cart2.Add(product1);
-            cart2.Add(product2);
-            cart2.Add(product2);
+            var cart2 = new Cart(customer2)
+            {
+                product1,
+                product2,
+                product2
+            };
 
-            var cashdesk = new CashDesk(1, seller);
-            cashdesk.MaxQueueLenght = 10;
+            var cashdesk = new CashDesk(1, seller)
+            {
+                MaxQueueLenght = 10
+            };
             cashdesk.Enqueue(cart1);
             cashdesk.Enqueue(cart2);
 

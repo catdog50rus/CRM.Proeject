@@ -22,7 +22,7 @@ namespace CRM.Proeject.WFI
 
         public ProductForm(Product product) : this()
         {
-            Product = product;
+            Product = product ?? new Product();
             textBoxProductName.Text = Product.Name;
             numericProductPrice.Value = Product.Price;
             numericProductCount.Value = Product.Count;
@@ -36,23 +36,12 @@ namespace CRM.Proeject.WFI
         private void ButtonSave_Click(object sender, EventArgs e)
         {
 
-            if (Product != null)
-            {
-                Product.Name = textBoxProductName.Text;
-                Product.Price = numericProductPrice.Value;
-                Product.Count = Convert.ToInt32(numericProductCount.Value);
-            }
-            else
-            {
-                Product = new Product()
-                {
-                    Name = textBoxProductName.Text,
-                    Price = numericProductPrice.Value,
-                    Count = Convert.ToInt32(numericProductCount.Value)
-                };
-            }
+            Product = Product ?? new Product();
+            Product.Name = textBoxProductName.Text;
+            Product.Price = numericProductPrice.Value;
+            Product.Count = Convert.ToInt32(numericProductCount.Value);
                 
-           // Close();
+            Close();
         }
     }
 }

@@ -18,7 +18,7 @@ namespace CRM.Proeject.BL.Model
         public bool IsModel { get; set; }
         public int Count => Queue.Count;
 
-        //public event EventHandler<Check> CheckClosed;
+        public event EventHandler<Check> CheckClosed;
 
         public CashDesk(int number, Seller seller)
         {
@@ -45,6 +45,7 @@ namespace CRM.Proeject.BL.Model
         public decimal Dequeue()
         {
             decimal sum = 0;
+           
             if (Queue.Count == 0)
             {
                 return 0;
@@ -106,7 +107,7 @@ namespace CRM.Proeject.BL.Model
                     db.SaveChanges();
                 }
 
-                //CheckClosed?.Invoke(this, check);
+                CheckClosed?.Invoke(this, check);
             }
 
             return sum;

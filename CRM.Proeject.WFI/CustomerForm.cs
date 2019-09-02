@@ -34,17 +34,9 @@ namespace CRM.Proeject.WFI
 
         private void ButtonSaveCustomerForm_Click(object sender, EventArgs e)
         {
-            if (Customer != null)
-            {
-                Customer.Name = textBoxCustomerForm.Text;
-            }
-            else
-            {
-                Customer = new Customer()
-                {
-                    Name = textBoxCustomerForm.Text
-                };
-            }
+            Customer = Customer ?? new Customer();
+            Customer.Name = textBoxCustomerForm.Text;
+                
         }
     }
 }

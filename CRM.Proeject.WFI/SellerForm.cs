@@ -33,17 +33,8 @@ namespace CRM.Proeject.WFI
 
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            if (Seller != null)
-            {
-                Seller.Name = textBoxSellerName.Text;
-            }
-            else
-            {
-                Seller = new Seller()
-                {
-                    Name = textBoxSellerName.Text
-                };
-            }
+            Seller = Seller ?? new Seller();
+            Seller.Name = textBoxSellerName.Text;
         }
     }
 }
