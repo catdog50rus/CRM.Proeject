@@ -113,10 +113,10 @@ namespace CRM.Proeject.BL.Model
             return sum;
         }
 
-        //public override string ToString()
-        //{
-        //    return $"Касса №{Number}";
-        //}
+        public override string ToString()
+        {
+            return $"Касса № {Number + 1}";
+        }
     }
 }
 

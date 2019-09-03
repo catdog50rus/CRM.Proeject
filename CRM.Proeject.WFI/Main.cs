@@ -81,7 +81,8 @@ namespace CRM.Proeject.WFI
 
         private void ModelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var form = new ModelForm();
+            form.Show();
         }
     }
 }
