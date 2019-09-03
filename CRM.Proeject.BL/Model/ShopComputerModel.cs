@@ -21,6 +21,8 @@ namespace CRM.Proeject.BL.Model
 
         public int CustomerSpeed { get; set; } = 100;
         public int CashDeskSpeed { get; set; } = 500;
+        public int CashDeskCount { get; set; } = 3;
+
 
 
         public ShopComputerModel()
@@ -34,7 +36,7 @@ namespace CRM.Proeject.BL.Model
                 Sellers.Enqueue(seller);
             }
 
-            for(int i = 0; i < 3; i++) // 3 кассы
+            for(int i = 0; i < CashDeskCount; i++) // 3 кассы
             {
                 CashDesks.Add(new CashDesk(CashDesks.Count, Sellers.Dequeue()));
             }
@@ -43,9 +45,10 @@ namespace CRM.Proeject.BL.Model
         public void Start()
         {
             isWorking = true;
-            Task.Run(() => CreateCarts(10, CustomerSpeed));
+            
+            Task.Run(() => CreateCarts(10));
 
-            var cashDeskTasks = CashDesks.Select(c => new Task(() => CashDeskWork(c, CashDeskSpeed)));
+            var cashDeskTasks = CashDesks.Select(c => new Task(() => CashDeskWork(c)));
             foreach(var task in cashDeskTasks)
             {
                 task.Start();
@@ -57,19 +60,19 @@ namespace CRM.Proeject.BL.Model
             isWorking = false;
         }
 
-        private void CashDeskWork(CashDesk cashDesk, int sleep)
+        private void CashDeskWork(CashDesk cashDesk)
         {
             while (isWorking)
             {
                 if (cashDesk.Count > 0)
                 {
                     cashDesk.Dequeue();
-                    Thread.Sleep(sleep);
+                    Thread.Sleep(CashDeskSpeed);
                 }
             }
         }
 
-        private void CreateCarts(int customerCounts, int sleep)
+        private void CreateCarts(int customerCounts)
         {
             while (isWorking)
             {
@@ -87,7 +90,7 @@ namespace CRM.Proeject.BL.Model
                     cash.Enqueue(cart);
                 }
 
-                Thread.Sleep(sleep);
+                Thread.Sleep(CustomerSpeed);
             }
 
         }

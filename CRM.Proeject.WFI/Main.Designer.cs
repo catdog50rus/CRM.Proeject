@@ -38,6 +38,10 @@
             this.customerAddToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.checkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listBoxProducts = new System.Windows.Forms.ListBox();
+            this.listBoxCart = new System.Windows.Forms.ListBox();
+            this.labelSum = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +49,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mainMenuToolStripMenuItem,
-            this.modelToolStripMenuItem});
+            this.modelToolStripMenuItem,
+            this.closedToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(784, 24);
@@ -68,7 +73,7 @@
             this.productToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.productAddToolStripMenuItem});
             this.productToolStripMenuItem.Name = "productToolStripMenuItem";
-            this.productToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.productToolStripMenuItem.Text = "Товар";
             this.productToolStripMenuItem.Click += new System.EventHandler(this.ProductToolStripMenuItem_Click);
             // 
@@ -84,7 +89,7 @@
             this.sellerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sellerAddToolStripMenuItem1});
             this.sellerToolStripMenuItem.Name = "sellerToolStripMenuItem";
-            this.sellerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sellerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.sellerToolStripMenuItem.Text = "Продавец";
             this.sellerToolStripMenuItem.Click += new System.EventHandler(this.SellerToolStripMenuItem_Click);
             // 
@@ -100,7 +105,7 @@
             this.customerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.customerAddToolStripMenuItem2});
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.customerToolStripMenuItem.Text = "Покупатель";
             this.customerToolStripMenuItem.Click += new System.EventHandler(this.CustomerToolStripMenuItem_Click);
             // 
@@ -114,7 +119,7 @@
             // checkToolStripMenuItem
             // 
             this.checkToolStripMenuItem.Name = "checkToolStripMenuItem";
-            this.checkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checkToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.checkToolStripMenuItem.Text = "Чек";
             this.checkToolStripMenuItem.Click += new System.EventHandler(this.CheckToolStripMenuItem_Click);
             // 
@@ -125,11 +130,47 @@
             this.modelToolStripMenuItem.Text = "Моделирование";
             this.modelToolStripMenuItem.Click += new System.EventHandler(this.ModelToolStripMenuItem_Click);
             // 
+            // closedToolStripMenuItem
+            // 
+            this.closedToolStripMenuItem.Name = "closedToolStripMenuItem";
+            this.closedToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.closedToolStripMenuItem.Text = "Выход";
+            this.closedToolStripMenuItem.Click += new System.EventHandler(this.ClosedToolStripMenuItem_Click);
+            // 
+            // listBoxProducts
+            // 
+            this.listBoxProducts.FormattingEnabled = true;
+            this.listBoxProducts.Location = new System.Drawing.Point(12, 27);
+            this.listBoxProducts.Name = "listBoxProducts";
+            this.listBoxProducts.Size = new System.Drawing.Size(204, 394);
+            this.listBoxProducts.TabIndex = 2;
+            this.listBoxProducts.DoubleClick += new System.EventHandler(this.ListBoxProducts_DoubleClick);
+            // 
+            // listBoxCart
+            // 
+            this.listBoxCart.FormattingEnabled = true;
+            this.listBoxCart.Location = new System.Drawing.Point(255, 27);
+            this.listBoxCart.Name = "listBoxCart";
+            this.listBoxCart.Size = new System.Drawing.Size(192, 342);
+            this.listBoxCart.TabIndex = 3;
+            // 
+            // labelSum
+            // 
+            this.labelSum.AutoSize = true;
+            this.labelSum.Location = new System.Drawing.Point(255, 376);
+            this.labelSum.Name = "labelSum";
+            this.labelSum.Size = new System.Drawing.Size(40, 13);
+            this.labelSum.TabIndex = 4;
+            this.labelSum.Text = "Итого:";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 442);
+            this.Controls.Add(this.labelSum);
+            this.Controls.Add(this.listBoxCart);
+            this.Controls.Add(this.listBoxProducts);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
@@ -154,6 +195,10 @@
         private System.Windows.Forms.ToolStripMenuItem sellerAddToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem customerAddToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem modelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closedToolStripMenuItem;
+        private System.Windows.Forms.ListBox listBoxProducts;
+        private System.Windows.Forms.ListBox listBoxCart;
+        private System.Windows.Forms.Label labelSum;
     }
 }
 

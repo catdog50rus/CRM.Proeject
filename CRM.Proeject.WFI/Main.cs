@@ -14,10 +14,15 @@ namespace CRM.Proeject.WFI
     public partial class Main : Form
     {
         CrmContext db;
+        Cart cart;
+        Customer customer;
+        
         public Main()
         {
             InitializeComponent();
             db = new CrmContext();
+
+            cart = new Cart(customer);
         }
 
         private void ProductToolStripMenuItem_Click(object sender, EventArgs e)
@@ -76,13 +81,40 @@ namespace CRM.Proeject.WFI
 
         private void Main_Load(object sender, EventArgs e)
         {
-
+            Task.Run(() =>
+            {
+                listBoxProducts.Invoke((Action)delegate
+               {
+                   UpdateLists();
+               });
+            });
         }
 
         private void ModelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new ModelForm();
             form.Show();
+        }
+
+        private void ClosedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void ListBoxProducts_DoubleClick(object sender, EventArgs e)
+        {
+            if(listBoxProducts.SelectedItem is Product product)
+            {
+                cart.Add(product);
+                listBoxCart.Items.Add(product);
+                labelSum.Text = "Итого :" + cart.Sum;
+            }
+        }
+
+        private void UpdateLists()
+        {
+            listBoxProducts.Items.AddRange(db.Products.ToArray());
+            listBoxCart.Items.AddRange(cart.GetAll().ToArray());
         }
     }
 }

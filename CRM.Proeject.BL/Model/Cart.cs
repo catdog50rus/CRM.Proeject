@@ -11,6 +11,8 @@ namespace CRM.Proeject.BL.Model
     {
         public Customer Customer { get; set; }
         public Dictionary<Product, int> Products { get; set; }
+        public decimal Sum => GetAll().Sum(p => p.Price);
+
         public Cart(Customer customer)
         {
             Customer = customer;

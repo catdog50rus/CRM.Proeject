@@ -24,6 +24,7 @@ namespace CRM.Proeject.WFI
         {
             numericUpDownCustomSpeed.Value = model.CustomerSpeed;
             numericUpDownCashDeskSpeed.Value = model.CashDeskSpeed;
+            
         }
 
         private void BeginButton_Click(object sender, EventArgs e)
@@ -61,5 +62,7 @@ namespace CRM.Proeject.WFI
         {
             model.Stop();
         }
+
+
     }
 }
